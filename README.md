@@ -106,3 +106,16 @@ You can, but there's two things that happen if you choose to:
    your Memcached configurations within that class, as well as not create
    duplicate instances without doing this.  So, just keep in mind, you can't do:
    `Cachew::instance('memcached');` without using our classes. Sorry!
+
+## Where's the rest of the documentation?
+
+We've tried extremely hard to keep our library as simple to understand as
+possible. So, we've tried to do our absolute best to sum up the power of Cachew
+with just this one page documentation.
+
+But, we've also done a lot of inline-documentation that can be viewed through
+our [generated API docs](http://cachew.syntaqx.com) allowing you to understand
+more of the technicalities involved to making everything so powerfully simple!
+
+So, if you have any questions, please feel free to ask. But we both know you'll
+pick it up in no time!
