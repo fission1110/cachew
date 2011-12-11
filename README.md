@@ -34,7 +34,7 @@ docblocks!
 Also, if you check out the example we've provided, it shows you how you can do
 the same thing above, but by using our gateway Cachew class! It's even easier!
 
-    $cache = Cachew::instance('file');
+    $cache = Cachew\Cachew::instance('file');
 
 ### Step 2: Set up your cached information
 
@@ -94,7 +94,7 @@ they're exactly the same to use)
 After you've done that, just call the instancer method, and you'll have yourself
 a fully functional Memcached connection to do whatever you want with!
 
-    Memcached::instance();
+    Cachew\Memcached::instance();
 
 ### Okay, but if it's just returning an instance to PHP's Memcache(d) libraries, why don't I just use those?
 

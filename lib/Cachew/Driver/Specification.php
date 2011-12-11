@@ -1,26 +1,26 @@
 <?php
 
 /**
- * Cachew namespace. This namespace contains the driver specification absract
- * class for cache drivers to handle data within a cache.
+ * Cache driver namespace. This namespace controls the cache driver
+ * implementations, as outlined by the abstract cache driver class.
  *
  * @package    Cachew
  * @subpackage Driver
  */
-namespace Cachew;
+namespace Cachew\Driver;
 
 /**
- * Abstract cache driver class
+ * Abstract cache driver specification class
  *
- * The abstract cache driver abstract class outlines the methods that should
- * exist in every cache driver, ensuring consistent functionality for each
- * cache type. Additionally, this abstract class attempts to implement common
- * functionality to remove duplication between drivers.
+ * The abstract specification class outlines the methods that should exist in
+ * every cache driver, ensuring consistent functionality for each cache type.
+ * Additionally, this abstract class attempts to implement common functionality
+ * to remove duplication between drivers.
  *
  * @pacakge    Cachew
  * @subpackage Driver
  */
-abstract class Driver
+abstract class Specification
 {
 	/**
 	 * Get an item from the cache. If the item doesn't exist in the cache,

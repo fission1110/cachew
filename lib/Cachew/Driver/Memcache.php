@@ -10,12 +10,13 @@
 namespace Cachew\Driver;
 
 /**
- * APC driver class
+ * Memcache driver class
  *
+ * @see        http://php.net/memcache
  * @package    Cachew
  * @subpackage Driver
  */
-class APC extends \Cachew\Driver
+class Memcache extends Specification
 {
 	/**
 	 * Application specific key to prepend to store item names, preventing
@@ -26,19 +27,22 @@ class APC extends \Cachew\Driver
 	private $key;
 
 	/**
+	 * The Memcache instance to utilize
+	 *
+	 * @var    \Memcache
+	 */
+	private $memcache;
+
+	/**
 	 * Default constructor, implicitly called on each newly-created object.
 	 *
 	 * @param    string           Application key
 	 * @return   void             No value is returned
 	 */
-	public function __construct($key = null)
+	public function __construct($key = null, \Memcache $memcache)
 	{
-		if(!\extension_loaded('apc'))
-		{
-			throw new \RuntimeException('Cachew\\Driver\\APC could not locate the APC extension on this system');
-		}
-
 		$this->key = $key;
+		$this->memcache = $memcache;
 	}
 
 	/**
@@ -49,7 +53,7 @@ class APC extends \Cachew\Driver
 	 */
 	public function exists($key)
 	{
-		return \apc_exists($this->key.$key);
+		return ($this->get($key) !== null);
 	}
 
 	/**
@@ -60,7 +64,7 @@ class APC extends \Cachew\Driver
 	 */
 	public function retrieve($key)
 	{
-		if(($cache = \apc_fetch($this->key.$key)) !== null)
+		if(($cache = $this->memcache->get($this->key.$key)) !== false)
 		{
 			return $cache;
 		}
@@ -76,7 +80,7 @@ class APC extends \Cachew\Driver
 	 */
 	public function set($key, $value = null, $minutes = 60)
 	{
-		return \apc_store($this->key.$key, $value, ($minutes * 60));
+		return $this->memcache->set($this->key.$key, $value, 0, ($minutes * 60));
 	}
 
 	/**
@@ -87,8 +91,8 @@ class APC extends \Cachew\Driver
 	 */
 	public function forget($key)
 	{
-		return \apc_delete($this->key.$key);
+		return $this->memcache->delete($this->key.$key);
 	}
 }
 
-/* End of file APC.php */
+/* End of file Memcache.php */

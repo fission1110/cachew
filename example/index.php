@@ -5,11 +5,11 @@ use Cachew\Cachew as Cachew;
 
 // Let's go ahead an include the entire suite.
 require_once '../lib/Cachew/Cachew.php';
-require_once '../lib/Cachew/Cachew/Driver.php';
-require_once '../lib/Cachew/Cachew/Driver/APC.php';
-require_once '../lib/Cachew/Cachew/Driver/File.php';
-require_once '../lib/Cachew/Cachew/Driver/Memcache.php';
-require_once '../lib/Cachew/Cachew/Driver/Memcached.php';
+require_once '../lib/Cachew/Driver/Specification.php';
+require_once '../lib/Cachew/Driver/APC.php';
+require_once '../lib/Cachew/Driver/File.php';
+require_once '../lib/Cachew/Driver/Memcache.php';
+require_once '../lib/Cachew/Driver/Memcached.php';
 
 // Let's set up our configurations!
 Cachew::$configuration['default'] = 'file'; // Maybe try a different driver?

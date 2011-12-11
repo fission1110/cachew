@@ -15,7 +15,7 @@ namespace Cachew\Driver;
  * @package    Cachew
  * @subpackage Driver
  */
-class File extends \Cachew\Driver
+class File extends Specification
 {
 	/**
 	 * Application specific key to prepend to store item names, preventing

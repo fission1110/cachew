@@ -16,7 +16,7 @@ namespace Cachew\Driver;
  * @package    Cachew
  * @subpackage Driver
  */
-class Memcached extends \Cachew\Driver
+class Memcached extends Specification
 {
 	/**
 	 * Application specific key to prepend to store item names, preventing
