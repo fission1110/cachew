@@ -31,6 +31,11 @@ docblocks!
     $cache = new Cachew\Driver\Memcache('application-key', $memcache);
     $cache = new Cachew\Driver\Memcached('application-key', $memcached);
 
+Also, if you check out the example we've provided, it shows you how you can do
+the same thing above, but by using our gateway Cachew class! It's even easier!
+
+    $cache = Cachew::instance('file');
+
 ### Step 2: Set up your cached information
 
 The methods you need to consider while working with Cachew are as follows:
