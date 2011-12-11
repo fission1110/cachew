@@ -5,7 +5,7 @@
  * class for cache drivers to handle data within a cache.
  *
  * @package    Cachew
- * @subpackage Cachew
+ * @subpackage Driver
  */
 namespace Cachew;
 
@@ -18,7 +18,7 @@ namespace Cachew;
  * functionality to remove duplication between drivers.
  *
  * @pacakge    Cachew
- * @subpackage Cachew
+ * @subpackage Driver
  */
 abstract class Driver
 {
@@ -66,7 +66,7 @@ abstract class Driver
 			$default = $default();
 		}
 
-		$this->put($key, $default, $minutes);
+		$this->set($key, $default, $minutes);
 
 		return $default;
 	}
