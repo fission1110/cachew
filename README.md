@@ -105,5 +105,4 @@ You can, but there's two things that happen if you choose to:
 2. You can't use the gateway class we've created. There's no way for us to know
    your Memcached configurations within that class, as well as not create
    duplicate instances without doing this.  So, just keep in mind, you can't do:
-       Cachew::instance('memcached');
-   without using our classes. Sorry!
+   `Cachew::instance('memcached');` without using our classes. Sorry!
