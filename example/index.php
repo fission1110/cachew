@@ -3,13 +3,8 @@
 // Aliasing rules
 use Cachew\Cachew as Cachew;
 
-// Let's go ahead an include the entire suite.
-require_once '../lib/Cachew/Cachew.php';
-require_once '../lib/Cachew/Driver/Specification.php';
-require_once '../lib/Cachew/Driver/APC.php';
-require_once '../lib/Cachew/Driver/File.php';
-require_once '../lib/Cachew/Driver/Memcache.php';
-require_once '../lib/Cachew/Driver/Memcached.php';
+// Just a handy autoload function to get the classes here when we call them
+function __autoload($className) { require '../lib/'.$className.'.php'; }
 
 // Let's set up our configurations!
 Cachew::$configuration['default'] = 'file'; // Maybe try a different driver?
