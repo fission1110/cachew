@@ -31,8 +31,10 @@ docblocks!
     $cache = new Cachew\Driver\Memcache('application-key', $memcache);
     $cache = new Cachew\Driver\Memcached('application-key', $memcached);
 
-Also, if you check out the example we've provided, it shows you how you can do
-the same thing above, but by using our gateway Cachew class! It's even easier!
+Also, if you check out the code example we've provided (found at
+`/example/index.php`), you'll see that we're using the Cachew gateway class!
+It both makes instancing a whole lot easier, and also makes sure you don't have
+duplicate objects lying around by implementing the Singleton pattern.
 
     $cache = Cachew\Cachew::instance('file');
 
