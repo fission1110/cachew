@@ -86,7 +86,7 @@ They're pretty simple. All you need to do is pass your configurations to the
 object like so (feel free to exchange the word Memcached for Memcache, because
 they're exactly the same to use)
 
-    Memcached::$configuration = array(
+    Cachew\Memcached::$configuration = array(
     	array('host' => '127.0.0.1', 'port' => 11211, 'weight' => 50),
     	array('host' => '192.168.2.10', 'port' => 11211, 'weight' => 50),
     );
