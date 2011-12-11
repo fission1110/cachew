@@ -60,7 +60,7 @@ class Cachew
 	 *
 	 * @var    array
 	 */
-	public static $drivers = array();
+	private static $drivers = array();
 
 	/**
 	 * Retrieve a singleton instance to a cache driver
