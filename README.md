@@ -42,8 +42,8 @@ duplicate objects lying around by implementing the Singleton pattern.
 
 The methods you need to consider while working with Cachew are as follows:
 `set`, `get`, `exists`, `remember`, and `forget`. Each of the methods do
-something a bit difference, and most of them are self explanatory, but here are
-their definitions:
+something a a little bit different, and most of them are self explanatory, but
+here are their definitions:
 
 ##### set(`key`, `value`, `minutes` = 60)
 
