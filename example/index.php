@@ -46,4 +46,4 @@ echo $cache->get('hello-world');
 // Alright.. let's clean up the data since we're just doing an example
 $cache->forget('hello-world');
 
-/* End of file file.php */
+/* End of file index.php */
