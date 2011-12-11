@@ -34,7 +34,7 @@ $cache->remember('hello-world', function()
 echo $cache->get('hello-world');
 
 // M'k.. let's do it again. If "hello-world" isn't set, overwrite it with this
-// Clorure
+// Closure
 $cache->remember('hello-world', function()
 {
 	return 'This should not show up, because the cache exists<br>'.PHP_EOL;
