@@ -70,3 +70,40 @@ Delete an item from the cache
 Everything implemented here is meant to provide you all the power you need from
 a cache, with as little headache as possible. Go ahead, try it out! Let us know
 what you think!
+
+## How does Memcache(d) work?
+
+Well, you have a couple of options on that.
+
+1. We've made a library for both Memcache and Memcached that behave identically,
+   which you can (and we highly recommend you do) use.
+2. You can pass your own Memcache(d) instances to the drivers through the
+   constructors.
+
+### Well, tell me how to use your libraries?
+
+They're pretty simple. All you need to do is pass your configurations to the
+object like so (feel free to exchange the word Memcached for Memcache, because
+they're exactly the same to use)
+
+    Memcached::$configuration = array(
+    	array('host' => '127.0.0.1', 'port' => 11211, 'weight' => 50),
+    	array('host' => '192.168.2.10', 'port' => 11211, 'weight' => 50),
+    );
+
+After you've done that, just call the instancer method, and you'll have yourself
+a fully functional Memcached connection to do whatever you want with!
+
+    Memcached::instance();
+
+### Okay, but if it's just returning an instance to PHP's Memcache(d) libraries, why don't I just use those?
+
+You can, but there's two things that happen if you choose to:
+
+1. You have to manage your own singleton instance to it. It's pretty wasteful to
+   have multiple variables lying around when you could just this method.
+2. You can't use the gateway class we've created. There's no way for us to know
+   your Memcached configurations within that class, as well as not create
+   duplicate instances without doing this.  So, just keep in mind, you can't do:
+       Cachew::instance('memcached');
+   without using our classes. Sorry!

@@ -99,9 +99,9 @@ class Cachew
 			case 'file':
 				return new Driver\File(static::$configuration['key'], static::$configuration['path']);
 			case 'memcache':
-				return new Driver\Memcache(static::$configuration['key'], '??');
+				return new Driver\Memcache(static::$configuration['key'], Memcache::instance());
 			case 'memcached':
-				return new Driver\Memcached(static::$configuration['key'], '??');
+				return new Driver\Memcached(static::$configuration['key'], Memcached::instance());
 			default:
 				throw new \InvalidArgumentException('Cachew driver ['.$driver.'] is not currently supported');
 			break;
